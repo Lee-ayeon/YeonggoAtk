@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>영고 공대 일정</title>
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/yeonggo.css" />
+</head>
+
+<body class="size-1520 primary-color-red background-white" id="classlist">
+  <!-- MAIN -->
+  <main role="main">
+    <!-- SECTION 1 -->
+    <section class="scroll">
+      <div class="day wed">수(8.23)</div>
+      <div class="divider"></div>
+      <div class="day thu">목(8.24)</div>
+      <div class="divider"></div>
+      <div class="day fri">금(8.25)</div>
+      <div class="divider"></div>
+      <div class="day sat">토(8.26)</div>
+      <div class="divider"></div>
+      <div class="day sun">일(8.27)</div>
+      <div class="divider"></div>
+      <div class="day mon">월(8.28)</div>
+      <div class="divider"></div>
+      <div class="day tue">화(8.29)</div>
+      <div class="divider"></div>
+      <div class="day end"></div>
+    </section>
+    <section>
+      <div class="gobtn">참여</div>
+      <div class="notbtn">탈퇴</div>
+    </section>
+    <section>
+      <div class="title attack">공격대</div>
+    </section>
+    <div class="dropdown">
+      <button type="button" class="dropdown-toggle">
+        공격대를 선택해주세요
+      </button>
+      <ul class="dropdown-menu">
+        <li class="dropdown-item">
+          <button type="button" value="1" class="dropdown-option">
+            (수) PM 08:00 카양겔 하드
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="1" class="dropdown-option">
+            (목) 시간 미정 쿠크세이튼
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="2" class="dropdown-option">
+            (금) PM 09:10 아브렐슈드 하드 1-4
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="3" class="dropdown-option">
+            (토) PM 08:10 아브렐슈드 하드 1-4
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="4" class="dropdown-option">
+            (일) PM 03:00 일리아칸 노말
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="5" class="dropdown-option">
+            (일) PM 04:00 일리아칸 노말
+          </button>
+        </li>
+        <li class="dropdown-item">
+          <button type="button" value="6" class="dropdown-option">
+            (월) PM 08:00 카양겔 하드
+          </button>
+        </li>
+      </ul>
+    </div>
+    <form class="submit" id="my_form">
+      <label class="title nickname-title" for="name">캐릭터 이름</label>
+      <input class="space nickname" type="text" id="name" name="name"  autocomplete="off">
+    </form>
+    <div class="history_title"> 히스토리
+      <div class="history" id="parentElement">이것은 히스토리입니다.</div>
+    </div>
+    <div class="atkmakerbtn">공대 만들기</div>
+    <div class="atkmaker">
+      <div class="dungeonbox">
+        <div class="title"style="position: absolute; left: 3px;">던전명</div>
+        <div class="dungeonselect">
+          <button class="dungeonselecterunit">던전을 선택해주세요</button>
+          <ul class="dungeonselecter-menu">
+            <li class="dropdown-item">
+              <button type="button" value="1" class="dungeon-option">
+                쿠크세이튼
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="2" class="dungeon-option">
+                아브렐슈드
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="3" class="dungeon-option">
+                카양겔
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="4" class="dungeon-option">
+                일리아칸
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="5" class="dungeon-option">
+                혼돈의 상아탑
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="6" class="dungeon-option">
+                카멘
+              </button>
+            </li>
+          </ul></div>
+        <div class="title" style="position: absolute; left: 220px;">난이도</div>
+        <div class="difficultybox">
+          <div class="normal">노말</div>
+          <div class="hard">하드</div>
+          <div class="hell">헬</div>
+        </div>
+      </div>
+      <div class="timebox">
+        <div class="title"style="position: absolute; left: 3px;">요일</div>
+        <div class="dayselect">
+          <button class="dayselecterunit">요일 선택</button>
+          <ul class="dayselecter-menu">
+            <li class="dropdown-item">
+              <button type="button" value="1" class="day-option">
+                월요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="2" class="day-option">
+                화요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="3" class="day-option">
+                수요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="4" class="day-option">
+                목요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="5" class="day-option">
+                금요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="6" class="day-option">
+                토요일
+              </button>
+            </li>
+            <li class="dropdown-item">
+              <button type="button" value="7" class="day-option">
+                일요일
+              </button>
+            </li>
+          </ul></div>
+        <form id="my_form">
+          <label class="title" style="position: absolute; left: 133px;" for="time">시간</label>
+          <input class="space" style="width: 70px; position: absolute; left: 133px; top: 50px;" type="text" id="time" name="time"  autocomplete="off">
+          <div class="AM" style="position: absolute; left: 243px; top: 53px;">AM</div>
+          <div class="PM" style="position: absolute; left: 313px; top: 53px;">PM</div>
+        </form>
+        <form id="my_form">
+          <label class="title" style="z-index: -1;position: absolute; left: 0px; top: 120px;" for="gate">관문</label>
+          <input class="space" style="z-index: -1;width: 50px; position: absolute; left: 0px; top: 170px;" type="text" id="gate" name="gate"  autocomplete="off">
+        </form>
+      </div>
+      <div class="makebtn">만들기</div>
+    </div>
+<div class="update">
+  <div style="font-size: 2rem; font-family: allbeauty;">업데이트 노트</div>
+  <div class="update_divider"></div>
+  <div class="update_contents">[10.10] 공대 만들기 창에 관문 입력란 추가</div>
+  <div class="update_contents">[10.10] 만들어진 공대가 가장 아래쪽에 배열되도록 수정</div>
+  <div class="update_contents">[10.10] 공대 삭제 후 새로고침해도 삭제된 상태가 유지됨</div>
+  <div class="update_contents">[10.10] null이라는 텍스트가 발생하던 문제 수정</div>
+  <div class="update_contents">[10.9] 이제 공대를 만든 후 새로고침해도 안 사라짐 유후</div>
+  <div class="update_contents">[10.9] 빠른 참여기능 삭제</div>
+  <div class="update_contents">[9.26] 공대 삭제 버튼 추가. 단, 삭제해도 새로고침하면 다시 생김</div>
+  <div class="update_contents">[9.20] 공대 만들기 기능 추가(but 새로고침하면 사라짐)</div>
+  <div class="update_contents">[9.20] 공대 만들기 버튼 추가</div>
+  <div class="update_contents">[9.20] 히스토리와 스케줄 관리판의 위치를 서로 바꿈</div>
+  <div class="update_contents">[9.12] 선택상자에서 참여 버튼을 눌러 신청할 수 있는 기능 추가</div>
+  <div class="update_contents">[9.12] 공대에 자리가 없음에도 참여할 시 경고창이 뜨지 않던 문제 수정</div>
+  <div class="update_contents">[9.12] 선택상자가 표시되어있는 상태에서 선택상자 외 다른 부분을 클릭해도 선택 상자가 사라지지 않는 문제 수정</div>
+  <div class="update_contents">[9.12] 참여 버튼을 눌러 참여 시 클래스를 선택안해도 신청되도록 수정. 이에따라 클래스 선택창은 삭제</div>
+  <div class="update_contents">[9.12] 탈퇴 버튼을 눌러 탈퇴 진행 시 레벨이 초기화 안되는 문제 수정</div>
+  <div class="update_contents">[9.11] 스케줄 내 클래스 이미지 클릭 시 선택상자가 나오도록 수정</div>
+</div>
+<div id="checkalert" class="alert">
+  <div class="alert-content">
+    <p>그대로 진행할 경우 해당 스케줄에서 탈퇴합니다.</p>
+    <p>계속하시겠습니까?</p>
+    <div class="flex">
+      <div class="check_yes">네 탈퇴할게요</div>
+      <div class="check_no">아뇨 취소할래요</div>
+    </div>
+  </div>
+</div>
+<div id="inputalert" class="alert">
+  <div class="alert-content">
+    <p>공격대, 캐릭터 이름 중 하나가 비었습니다</p>
+    <p>알맞게 입력했는지 다시 확인해주세요</p>
+    <div class="flex">
+      <div class="check_input">확인했어요</div>
+    </div>
+  </div>
+</div>
+<div id="fullalert" class="alert">
+  <div class="alert-content">
+    <p>공격대가 이미 가득찼습니다</p>
+    <p>선택한 공격대를 다시 확인해주세요</p>
+    <div class="flex">
+      <div class="check_full">확인했어요</div>
+    </div>
+  </div>
+</div>
+<div class="Choise" id="Choise">
+  <div>
+  <div class="ChoiseYesBtn">참여</div>
+  <div class="ChoiseNoBtn">탈퇴</div></div>
+</div>
+  </main>
+  <script type="text/javascript" src="js/yeonggo.js">
+    
+$.ajax({
+    method: "GET",
+    url: "https://developer-lostark.game.onstove.com/guilds/rankings?serverName=%EB%A3%A8%ED%8E%98%EC%98%A8'",
+    accept: "application/json",
+    authorization: "bearer your_JWT"
+})
+.done(function(msg){
+    console.log(msg)
+});
+  </script>
+</body>
+</html>
