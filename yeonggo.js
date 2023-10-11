@@ -345,7 +345,7 @@ removeatkbtn.forEach((button) => {
       }
     }
     //배열에 저장된 요소 삭제
-    selectedElements.remove();
+    selectedElements[0].remove();
     //공대 삭제에 따라 요일 배열 수정
     eval(button.parentNode.parentNode.id.slice(0, 3)).atk.pop();
     eval(button.parentNode.parentNode.id.slice(0, 3)).mbr.pop();
@@ -875,7 +875,7 @@ function atkmaker() {
   dropdown_menu.appendChild(dropdown_item);
   dropdown_item.appendChild(dropdown_btn);
   //공격대 드롭다운 요소 저장
-  localStorage.setItem(`drop : ${elday}_${atknum}`, dropdown_menu.outerHTML);
+  localStorage.setItem(`drop : ${elday}_${atknum}`, dropdown_item.outerHTML);
   // 요일 배열 수정하기
   console.log(day);
   day.atk.push(Number(atknum.slice(3, 4)));
