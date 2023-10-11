@@ -334,7 +334,7 @@ removeatkbtn.forEach((button) => {
       }
     }
     //배열에 저장된 요소 삭제
-    selectedElements.remove();
+    selectedElements[0].remove();
     //공대 삭제에 따라 요일 배열 수정
     eval(button.parentNode.parentNode.id.slice(0, 3)).atk.pop();
     eval(button.parentNode.parentNode.id.slice(0, 3)).mbr.pop();
