@@ -794,7 +794,7 @@ function atkmaker() {
     }
   }
   title.className = `time ${elday}_${atknum}`;
-  title.id = `(${koday}) ${AMorPM} ${time} ${dungeon} ${difficulty}`;
+  title.id = `(${koday}) ${AMorPM} ${time} ${dungeon} ${difficulty} ${gate}`;
   //칸
   let conbox = document.createElement("div");
   conbox.className = `conbox${numofmbr}`;
