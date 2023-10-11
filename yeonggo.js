@@ -62,7 +62,7 @@ const menu = document.querySelectorAll(".dropdown-menu")[0];
 const dungeonmenu = document.querySelector(".dungeonselecter-menu");
 const daymenu = document.querySelector(".dayselecter-menu");
 // 드롭다운 옵션
-const options = document.querySelectorAll(".dropdown-option");
+let options = document.querySelectorAll(".dropdown-option");
 const dungeonoptions = document.querySelectorAll(".dungeon-option");
 const dayoptions = document.querySelectorAll(".day-option");
 
