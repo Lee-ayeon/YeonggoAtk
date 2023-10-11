@@ -319,7 +319,22 @@ PM.addEventListener(`click`, () => {
 const removeatkbtn = document.querySelectorAll(`.remove`);
 removeatkbtn.forEach((button) => {
   button.addEventListener(`click`, () => {
-    button.parentNode.parentNode.remove(); //공대 삭제
+    //공대 삭제
+    button.parentNode.parentNode.remove();
+    //공격대 드롭다운 목록에서도 삭제
+    let elements = document.querySelectorAll(`.dropdown-option`); //dropdown-option가 클래스명인 것을 모두 선택
+    let selectedElements = [];
+    for (let i = 0; i < elements.length; i++) {
+      if (
+        //`(수) PM 08:00 카양겔 하드`형식으로 된 텍스트와 일치하는 것만 선택
+        elements[i].textContent.includes(`${button.previousElementSibling.id}`)
+      ) {
+        //선택한 요소를 배열에 저장
+        selectedElements.push(elements[i]);
+      }
+    }
+    //배열에 저장된 요소 삭제
+    selectedElements.remove();
     //공대 삭제에 따라 요일 배열 수정
     eval(button.parentNode.parentNode.id.slice(0, 3)).atk.pop();
     eval(button.parentNode.parentNode.id.slice(0, 3)).mbr.pop();
@@ -780,16 +795,27 @@ function atkmaker() {
   }
   title.className = `time ${elday}_${atknum}`;
   title.id = `(${koday}) ${AMorPM} ${time} ${dungeon} ${difficulty}`;
-  let conbox = document.createElement("div"); //칸
+  //칸
+  let conbox = document.createElement("div");
   conbox.className = `conbox${numofmbr}`;
-  let box = document.createElement("div"); //박스
+  //박스
+  let box = document.createElement("div");
   box.id = `${elday}_${atknum}`;
-  let titlebox = document.createElement("div"); // 타이틀박스
+  // 타이틀박스
+  let titlebox = document.createElement("div");
   titlebox.style.display = `flex`;
   titlebox.style.justifyContent = `space-between`;
-  let removeatkbtn = document.createElement("div"); // 공대 삭제 버튼
+  // 공대 삭제 버튼
+  let removeatkbtn = document.createElement("div");
   removeatkbtn.textContent = `삭제`;
   removeatkbtn.className = `remove`;
+  // 드롭다운 목록
+  let dropdown_item = document.createElement("li");
+  dropdown_item.className = `dropdown-item`;
+  let dropdown_btn = document.createElement("button");
+  dropdown_btn.type = `button`;
+  dropdown_btn.className = `dropdown-option`;
+  dropdown_btn.textContent = `(${koday}) ${AMorPM} ${time} ${dungeon} ${difficulty} ${gate}`;
   // 인원수만큼 반복
   for (i = 0; i < (numofmbr / 4) * 3; i++) {
     img = document.createElement("img");
@@ -831,6 +857,10 @@ function atkmaker() {
   titlebox.appendChild(title);
   titlebox.appendChild(removeatkbtn);
   box.appendChild(conbox);
+  //공격대 드롭다운에도 요소 추가
+  const dropdown_menu = document.getElementsByClassName(`dropdown-menu`);
+  dropdown_menu.appendChild(dropdown_item);
+  dropdown_item.appendChild(dropdown_btn);
   //로컬 스토리지에 저장
   localStorage.setItem(`atk : ${elday}_${atknum}`, box.outerHTML);
   // 요일 배열 수정하기
