@@ -221,6 +221,17 @@ for (let i = 0; i < 7; i++) {
     } else {
     }
 
+    //드롭다운 요소 표시하기
+    if (localStorage.getItem(`drop : ${day}_atk${atk[l]}`) !== null) {
+      document
+        .getElementsByClassName(`dropdown-menu`)[0]
+        .insertAdjacentHTML(
+          "beforeend",
+          localStorage.getItem(`drop : ${day}_atk${atk[l]}`)
+        );
+    } else {
+    }
+
     for (let k = 0; k < mbr; k++) {
       let day_atknum_mbrnum = `${day}_atk${atk[l]}_mbr${k + 1}`;
       let day_atknum_Lvnum = `${day}_atk${atk[l]}_lv${k + 1}`;
@@ -334,7 +345,7 @@ removeatkbtn.forEach((button) => {
       }
     }
     //배열에 저장된 요소 삭제
-    selectedElements[0].remove();
+    selectedElements.remove();
     //공대 삭제에 따라 요일 배열 수정
     eval(button.parentNode.parentNode.id.slice(0, 3)).atk.pop();
     eval(button.parentNode.parentNode.id.slice(0, 3)).mbr.pop();
@@ -857,12 +868,14 @@ function atkmaker() {
   titlebox.appendChild(title);
   titlebox.appendChild(removeatkbtn);
   box.appendChild(conbox);
+  //로컬 스토리지에 저장
+  localStorage.setItem(`atk : ${elday}_${atknum}`, box.outerHTML);
   //공격대 드롭다운에도 요소 추가
   const dropdown_menu = document.getElementsByClassName(`dropdown-menu`)[0];
   dropdown_menu.appendChild(dropdown_item);
   dropdown_item.appendChild(dropdown_btn);
-  //로컬 스토리지에 저장
-  localStorage.setItem(`atk : ${elday}_${atknum}`, box.outerHTML);
+  //공격대 드롭다운 요소 저장
+  localStorage.setItem(`drop : ${elday}_${atknum}`, dropdown_menu.outerHTML);
   // 요일 배열 수정하기
   console.log(day);
   day.atk.push(Number(atknum.slice(3, 4)));
@@ -877,12 +890,12 @@ function atkmaker() {
 
 /* 문제점 
 1. 
-2. 공대 만들기 기능 중 관문 적는 란이 없음
+2.
 3. 
 4. 퀵리무브시 히스토리에 공대명이 없음
 5. 날짜 변경 기능 추가
 6. 이름 클릭 탈퇴 시 이미 비어있는 자리임에도 경고문구가 뜨지 않음
 7. 공대 삭제 시 요일 목록 수정기능 추가
 8. 회원가입해서 아이디 입력하면 가진 캐릭터 목록 나타나서 고르게 하기
-9. 알 수 없는 null문자 발견
+9. 
 */
