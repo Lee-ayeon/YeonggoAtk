@@ -858,7 +858,7 @@ function atkmaker() {
   titlebox.appendChild(removeatkbtn);
   box.appendChild(conbox);
   //공격대 드롭다운에도 요소 추가
-  const dropdown_menu = document.getElementsByClassName(`dropdown-menu`);
+  const dropdown_menu = document.getElementsByClassName(`.dropdown-menu`);
   dropdown_menu.appendChild(dropdown_item);
   dropdown_item.appendChild(dropdown_btn);
   //로컬 스토리지에 저장
