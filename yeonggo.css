@@ -155,7 +155,7 @@ display: flex;
 align-items: center;
 }
 .nickname{
-  width: 280px;
+  width: 298px;
   height: 32px;
   position: absolute; left: 0px; top: 440px;
 }
@@ -221,7 +221,7 @@ position: absolute;
 z-index: 2;
 top: calc(100% + 4px);
 left: 0;
-width: 310px;
+width: 330px;
 margin-top: 0px;
 max-height: 0px;
 overflow: auto;
@@ -246,7 +246,7 @@ border-color: rgb(0, 0, 0);
 box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
 }
 .dropdown-option {
-width: 100%;
+width: 330px;
 height: 44px;
 padding: 0 16px;
 line-height: 44px;
@@ -254,7 +254,7 @@ text-align: left;
 font-size: 1rem;
 }
 .dropdown-item {
-width: 312px;
+width: 330px;
 height: 44px;
 }
 .submit {
