@@ -18,8 +18,8 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'SDMiSaeng';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDMiSaeng.woff') format('woff');
+    font-family: 'godoMaum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/godoMaum.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -404,7 +404,7 @@ top: 334px;
   border: 2px solid #aba81d;
   box-shadow: 2px 2px 4px #67650F;
   font-size: 1.5rem;
-  font-family: "SDMiSaeng";
+  font-family: "godoMaum";
   padding-top: 10px;
   padding-left: 10px;
 }
@@ -453,7 +453,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "SDMiSaeng";
+  font-family: "godoMaum";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -473,7 +473,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "SDMiSaeng";
+  font-family: "godoMaum";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -493,7 +493,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "SDMiSaeng";
+  font-family: "godoMaum";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -513,7 +513,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "SDMiSaeng";
+  font-family: "godoMaum";
   font-size: 1.5rem;
   transition: 0.3s;
 }
