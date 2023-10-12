@@ -52,6 +52,105 @@ let imageId = "";
 let classGroup = "";
 let thisid = "";
 
+// 요일별 공격대 개수(atk) 및 공격대별 인원수(mbr) : 요일 배열
+let wed, thu, fri, sat, sun, mon, tue;
+wed = {
+  atk: JSON.parse(localStorage.getItem(`wed : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`wed : mbr`)),
+};
+thu = {
+  atk: JSON.parse(localStorage.getItem(`thu : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`thu : mbr`)),
+};
+fri = {
+  atk: JSON.parse(localStorage.getItem(`fri : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`fri : mbr`)),
+};
+sat = {
+  atk: JSON.parse(localStorage.getItem(`sat : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`sat : mbr`)),
+};
+sun = {
+  atk: JSON.parse(localStorage.getItem(`sun : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`sun : mbr`)),
+};
+mon = {
+  atk: JSON.parse(localStorage.getItem(`mon : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`mon : mbr`)),
+};
+tue = {
+  atk: JSON.parse(localStorage.getItem(`tue : atk`)),
+  mbr: JSON.parse(localStorage.getItem(`tue : mbr`)),
+};
+let mbrarray = [wed.mbr, thu.mbr, fri.mbr, sat.mbr, sun.mbr, mon.mbr, tue.mbr];
+let atkstate = [wed.atk, thu.atk, fri.atk, sat.atk, sun.atk, mon.atk, tue.atk];
+let daylist = ["wed", "thu", "fri", "sat", "sun", "mon", "tue", "end"];
+console.log(atkstate);
+console.log(mbrarray);
+// 가장 긴 배열 찾기.
+let longestArray = atkstate.reduce((prev, current) => {
+  return current.length > prev.length ? current : prev;
+}, []);
+// 불러오기 및 나타내기
+for (let i = 0; i < 7; i++) {
+  for (let l = 0; l < longestArray.length; l++) {
+    const day = daylist[i];
+    const nextday = daylist[i + 1];
+    const atk = atkstate[i];
+    const mbr = mbrarray[i][l];
+    //공대 표시하기
+    if (localStorage.getItem(`atk : ${day}_atk${atk[l]}`) !== null) {
+      document
+        .getElementsByClassName(`${nextday}`)[0]
+        .previousElementSibling.insertAdjacentHTML(
+          "beforebegin",
+          localStorage.getItem(`atk : ${day}_atk${atk[l]}`)
+        );
+    } else {
+    }
+
+    //드롭다운 요소 표시하기
+    if (localStorage.getItem(`drop : ${day}_atk${atk[l]}`) !== null) {
+      document
+        .getElementsByClassName(`dropdown-menu`)[0]
+        .insertAdjacentHTML(
+          "beforeend",
+          localStorage.getItem(`drop : ${day}_atk${atk[l]}`)
+        );
+    } else {
+    }
+
+    for (let k = 0; k < mbr; k++) {
+      let day_atknum_mbrnum = `${day}_atk${atk[l]}_mbr${k + 1}`;
+      let day_atknum_Lvnum = `${day}_atk${atk[l]}_lv${k + 1}`;
+      //이름 불러오기
+      eval(
+        `${day_atknum_mbrnum} = localStorage.getItem('${day_atknum_mbrnum}') || "★딜러공석★";`
+      );
+      // 이미지 불러오기
+      eval(
+        `img_${day_atknum_mbrnum} = localStorage.getItem('img_${day_atknum_mbrnum}') || "딜러구함";`
+      );
+      //아이템 레벨 불러오기
+      eval(
+        `${day_atknum_Lvnum} = localStorage.getItem('${day_atknum_Lvnum}') || "0";`
+      );
+      //이름 나타내기
+      eval(
+        `document.getElementById("${day_atknum_mbrnum}").innerHTML = ${day_atknum_mbrnum};`
+      );
+      //이미지 나타내기
+      eval(
+        `document.getElementById("img_${day_atknum_mbrnum}").src = "img/classlist/"+img_${day_atknum_mbrnum}+".png"`
+      );
+      //아이템 레벨 나타내기
+      eval(
+        `document.getElementById("${day_atknum_Lvnum}").innerHTML ="Lv."+${day_atknum_Lvnum}`
+      );
+    }
+  }
+}
+
 // 드롭다운 초기 박스
 const dropdown = document.querySelector(".dropdown");
 const toggleButton = document.querySelectorAll(".dropdown-toggle")[0];
@@ -165,104 +264,6 @@ function selectOption() {
   toggleButton.classList.add("selected"); //색 바꾸기
 }
 
-// 요일별 공격대 개수(atk) 및 공격대별 인원수(mbr) : 요일 배열
-let wed, thu, fri, sat, sun, mon, tue;
-wed = {
-  atk: JSON.parse(localStorage.getItem(`wed : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`wed : mbr`)),
-};
-thu = {
-  atk: JSON.parse(localStorage.getItem(`thu : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`thu : mbr`)),
-};
-fri = {
-  atk: JSON.parse(localStorage.getItem(`fri : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`fri : mbr`)),
-};
-sat = {
-  atk: JSON.parse(localStorage.getItem(`sat : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`sat : mbr`)),
-};
-sun = {
-  atk: JSON.parse(localStorage.getItem(`sun : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`sun : mbr`)),
-};
-mon = {
-  atk: JSON.parse(localStorage.getItem(`mon : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`mon : mbr`)),
-};
-tue = {
-  atk: JSON.parse(localStorage.getItem(`tue : atk`)),
-  mbr: JSON.parse(localStorage.getItem(`tue : mbr`)),
-};
-let mbrarray = [wed.mbr, thu.mbr, fri.mbr, sat.mbr, sun.mbr, mon.mbr, tue.mbr];
-let atkstate = [wed.atk, thu.atk, fri.atk, sat.atk, sun.atk, mon.atk, tue.atk];
-let daylist = ["wed", "thu", "fri", "sat", "sun", "mon", "tue", "end"];
-console.log(atkstate);
-console.log(mbrarray);
-// 가장 긴 배열 찾기.
-let longestArray = atkstate.reduce((prev, current) => {
-  return current.length > prev.length ? current : prev;
-}, []);
-// 불러오기 및 나타내기
-for (let i = 0; i < 7; i++) {
-  for (let l = 0; l < longestArray.length; l++) {
-    const day = daylist[i];
-    const nextday = daylist[i + 1];
-    const atk = atkstate[i];
-    const mbr = mbrarray[i][l];
-    //공대 표시하기
-    if (localStorage.getItem(`atk : ${day}_atk${atk[l]}`) !== null) {
-      document
-        .getElementsByClassName(`${nextday}`)[0]
-        .previousElementSibling.insertAdjacentHTML(
-          "beforebegin",
-          localStorage.getItem(`atk : ${day}_atk${atk[l]}`)
-        );
-    } else {
-    }
-
-    //드롭다운 요소 표시하기
-    if (localStorage.getItem(`drop : ${day}_atk${atk[l]}`) !== null) {
-      document
-        .getElementsByClassName(`dropdown-menu`)[0]
-        .insertAdjacentHTML(
-          "beforeend",
-          localStorage.getItem(`drop : ${day}_atk${atk[l]}`)
-        );
-    } else {
-    }
-
-    for (let k = 0; k < mbr; k++) {
-      let day_atknum_mbrnum = `${day}_atk${atk[l]}_mbr${k + 1}`;
-      let day_atknum_Lvnum = `${day}_atk${atk[l]}_lv${k + 1}`;
-      //이름 불러오기
-      eval(
-        `${day_atknum_mbrnum} = localStorage.getItem('${day_atknum_mbrnum}') || "★딜러공석★";`
-      );
-      // 이미지 불러오기
-      eval(
-        `img_${day_atknum_mbrnum} = localStorage.getItem('img_${day_atknum_mbrnum}') || "딜러구함";`
-      );
-      //아이템 레벨 불러오기
-      eval(
-        `${day_atknum_Lvnum} = localStorage.getItem('${day_atknum_Lvnum}') || "0";`
-      );
-      //이름 나타내기
-      eval(
-        `document.getElementById("${day_atknum_mbrnum}").innerHTML = ${day_atknum_mbrnum};`
-      );
-      //이미지 나타내기
-      eval(
-        `document.getElementById("img_${day_atknum_mbrnum}").src = "img/classlist/"+img_${day_atknum_mbrnum}+".png"`
-      );
-      //아이템 레벨 나타내기
-      eval(
-        `document.getElementById("${day_atknum_Lvnum}").innerHTML ="Lv."+${day_atknum_Lvnum}`
-      );
-    }
-  }
-}
 //히스토리 표시하기
 historylist = JSON.parse(localStorage.getItem(`historylist`));
 var showhistorylist = document.getElementById("parentElement");
