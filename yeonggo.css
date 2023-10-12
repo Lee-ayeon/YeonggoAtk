@@ -1,20 +1,28 @@
 
 
 @font-face {
-  font-family: "goyang";
-  src: url("../font/Goyang.otf");
+    font-family: 'Goyang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Goyang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: "jamsil";
-  src: url("../font/The\ Jamsil\ OTF\ 4\ Medium.otf");
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 @font-face {
-  font-family: "allbeauty";
-  src: url("../font/오뮤_다예쁨체.ttf");
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: "peachtint";
-  src: url("../font/20958953_UTOIMAGE_유토이미지봉숭아틴트_TTF.ttf");
+    font-family: 'SDMiSaeng';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SDMiSaeng.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 @import "reset.css";
 html{font-size: 16px;}
@@ -54,7 +62,7 @@ html{font-size: 16px;}
   top : 0px;
   font-size: 1rem; 
   color: black; 
-  font-family: "goyang"
+  font-family: "Goyang"
 }
 .conbox4{
   width: 235px; 
@@ -70,7 +78,7 @@ html{font-size: 16px;}
   top : 0px;
   font-size: 1rem; 
   color: black; 
-  font-family: "goyang"
+  font-family: "Goyang"
 }
 .divider{
   width: 455px; 
@@ -130,7 +138,7 @@ html{font-size: 16px;}
   width: 200px;
   font-size: 2rem; 
   color: black; 
-  font-family: "jamsil";
+  font-family: "TheJamsil5Bold";
 }
 .attack{
   position: absolute; 
@@ -383,7 +391,7 @@ top: 334px;
 }
 .history_title {
   font-size: 2rem;
-  font-family: "allbeauty";
+  font-family: "omyu_pretty";
   position: absolute; left: 651px; top: 112px;
 }
 .history {
@@ -394,7 +402,7 @@ top: 334px;
   border: 2px solid #aba81d;
   box-shadow: 2px 2px 4px #67650F;
   font-size: 1.5rem;
-  font-family: "peachtint";
+  font-family: "SDMiSaeng";
   padding-top: 10px;
   padding-left: 10px;
 }
@@ -443,7 +451,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "peachtint";
+  font-family: "SDMiSaeng";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -463,7 +471,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "peachtint";
+  font-family: "SDMiSaeng";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -483,7 +491,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "peachtint";
+  font-family: "SDMiSaeng";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -503,7 +511,7 @@ top: 334px;
   display: flex; 
   align-items: center; 
   justify-content: center;
-  font-family: "peachtint";
+  font-family: "SDMiSaeng";
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -554,7 +562,7 @@ top: 334px;
   margin-top: 10px;
 }
 .classlist_title{
-  font-family: "jamsil";
+  font-family: "TheJamsil5Bold";
   margin-top: 5px;
   font-size: 1.3rem;
 }
@@ -632,7 +640,7 @@ background-color: #ff8989;
 }
 .update_contents{
   font-size: 1.2em;
-  font-family: "allbeauty";
+  font-family: "omyu_pretty";
 }
 .atkmakerbtn{
   width: 314px; 
@@ -925,7 +933,7 @@ font-size: 1rem;
   border-radius: 5px;
   display: flex; 
   font-size: 1.2rem; 
-  font-family: "jamsil";
+  font-family: "TheJamsil5Bold";
   align-items: center; 
   justify-content: center;
   margin-top: 15px;
