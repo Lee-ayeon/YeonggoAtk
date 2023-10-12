@@ -16,7 +16,7 @@
   font-family: "peachtint";
   src: url("../font/20958953_UTOIMAGE_유토이미지봉숭아틴트_TTF.ttf");
 }
-
+@import "reset.css";
 html{font-size: 16px;}
 
 .scroll{
