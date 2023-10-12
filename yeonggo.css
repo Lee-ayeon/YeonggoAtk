@@ -253,6 +253,14 @@ line-height: 44px;
 text-align: left;
 font-size: 1rem;
 }
+.dropdown-item {
+width: 312px;
+height: 44px;
+padding: 0 16px;
+line-height: 44px;
+text-align: left;
+font-size: 1rem;
+}
 .submit {
 position: absolute; 
 left: 651px; 
