@@ -24,7 +24,7 @@ let worksheet = workbook.Sheets[workbook.SheetNames[0]];
 data = [
   { id: "512", name: "son" },
   { id: "256", name: "lee" },
-  { id: "123", name: "kmm" },
+  { id: "123", name: "kim" },
 ];
 for (let num = 0; num < data.length; num++) {
   worksheet[`I${num + 7}`] = { v: data[num].id };
